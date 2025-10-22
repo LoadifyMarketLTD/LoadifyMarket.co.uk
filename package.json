@@ -1,12 +1,11 @@
 {
-  "name": "loadify-market-enterprise",
-  "version": "6.0.0",
+  "name": "loadifymarket-enterprise-v6",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "stripe": "^16.6.0",
-    "@sendgrid/mail": "^8.1.0",
-    "@supabase/supabase-js": "^2.45.0",
-    "node-fetch": "^3.3.2",
+    "@supabase/supabase-js": "^2.45.4",
+    "stripe": "^14.0.0",
+    "@sendgrid/mail": "^8.0.0",
     "pdfkit": "^0.13.0"
   }
 }

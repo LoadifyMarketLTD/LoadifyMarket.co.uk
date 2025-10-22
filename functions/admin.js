@@ -1,12 +1,9 @@
-const { createClient } = require('@supabase/supabase-js');
-exports.handler = async (event) => {
-  try{
-    const supa = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE);
-    const products=[
-      { id:'p1', name:'EUR Pallet (lot 30)', price:15000 },
-      { id:'p2', name:'UK→RO Transport (1 pallet)', price:22000 }
-    ];
-    await supa.from('products').upsert(products);
-    return { statusCode:200, body: JSON.stringify({ ok:true }) };
-  }catch(e){ return { statusCode:500, body: JSON.stringify({ error:e.message }) }; }
-}
+import { db, json } from "./_helpers.mjs";
+const DEMO=[{name:"Euro Pallets (x10)",price:7500},{name:"Shrink Wrap Roll",price:1299},{name:"Ratchet Strap",price:899}];
+export default async (req)=>{
+  const supa=db(); const u=new URL(req.url); const op=u.searchParams.get("op");
+  if(op==="seedProducts"){ if(!supa) return json(200,{count:DEMO.length,note:"in-memory"}); const {data,error}=await supa.from("products").insert(DEMO).select(); if(error) return json(500,{error:error.message}); return json(200,{count:data.length}); }
+  if(op==="listProducts"){ if(!supa) return json(200,{items:DEMO}); const {data,error}=await supa.from("products").select("*").order("created_at",{ascending:false}); if(error) return json(500,{error:error.message}); return json(200,{items:data}); }
+  if(op==="seedAll"){ return json(200,{ok:true,note:"Run schema.sql once. Seeded via seedProducts."}); }
+  return json(200,{ok:true});
+};

@@ -1,29 +1,13 @@
+
 [build]
-  command = "npm run build"
-  publish = "dist"
-  functions = "netlify/functions"
+  publish = "."
+  command = ""
+
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
 
 [[redirects]]
-  from = "/success"
-  to = "/success.html"
-  status = 200
-
-[[redirects]]
-  from = "/cancel"
-  to = "/cancel.html"
-  status = 200
-
-[[redirects]]
-  from = "/privacy-policy"
-  to = "/privacy-policy.html"
-  status = 200
-
-[[redirects]]
-  from = "/terms"
-  to = "/terms.html"
-  status = 200
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact/index.html"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
