@@ -1,0 +1,15 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Orders</title><link rel='stylesheet' href='/styles.css'></head><body><header><div class="container" style="display:flex;justify-content:space-between;align-items:center">
+<a href="/" style="font-weight:800;color:#fff">Loadify Market</a>
+<nav>
+  <a class="btn alt" href="/products.html">Products</a>
+  <a class="btn alt" href="/jobs.html">Jobs</a>
+  <a class="btn alt" href="/messages.html">Messages</a>
+  <a class="btn alt" href="/reviews.html">Reviews</a>
+  <a class="btn alt" href="/dashboard.html">Dashboard</a>
+  <a class="btn" href="/cart.html">Cart <span id="cartCount">0</span></a>
+</nav></div></header><main class='container'>
+<h1>Orders</h1>
+<div id="ordersList" class="grid cols-2"></div>
+<script>(async()=>{const r=await fetch('/.netlify/functions/orders');const j=await r.json();const root=document.getElementById('ordersList');root.innerHTML=(j.orders||[]).map(o=>`<div class='card'><div><b>#${o.id}</b> · £${(o.total/100).toFixed(2)}</div><div class='small'>${o.email||''} · ${o.status}</div></div>`).join('')})();</script>
+</main><footer><div class="container small">© <span id="yr"></span> Loadify Market — All rights reserved · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script></footer><script src='/scripts.js'></script></body></html>

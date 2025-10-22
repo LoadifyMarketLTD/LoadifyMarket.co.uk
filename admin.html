@@ -1,0 +1,18 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Admin Panel</title><link rel='stylesheet' href='/styles.css'></head><body><header><div class="container" style="display:flex;justify-content:space-between;align-items:center">
+<a href="/" style="font-weight:800;color:#fff">Loadify Market</a>
+<nav>
+  <a class="btn alt" href="/products.html">Products</a>
+  <a class="btn alt" href="/jobs.html">Jobs</a>
+  <a class="btn alt" href="/messages.html">Messages</a>
+  <a class="btn alt" href="/reviews.html">Reviews</a>
+  <a class="btn alt" href="/dashboard.html">Dashboard</a>
+  <a class="btn" href="/cart.html">Cart <span id="cartCount">0</span></a>
+</nav></div></header><main class='container'>
+<h1>Admin Panel</h1>
+<div class="grid cols-3">
+  <div class="card"><h3>Products</h3><button class="btn" onclick="seedProducts()">Seed demo</button></div>
+  <div class="card"><h3>Users</h3><div class="small">Roles: client, driver, admin</div></div>
+  <div class="card"><h3>Settings</h3><div class="small">Branding, fees, Stripe Connect</div></div>
+</div>
+</main><footer><div class="container small">© <span id="yr"></span> Loadify Market — All rights reserved · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script></footer><script src='/scripts.js'></script></body></html>

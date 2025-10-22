@@ -1,0 +1,18 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Products</title><link rel='stylesheet' href='/styles.css'></head><body><header><div class="container" style="display:flex;justify-content:space-between;align-items:center">
+<a href="/" style="font-weight:800;color:#fff">Loadify Market</a>
+<nav>
+  <a class="btn alt" href="/products.html">Products</a>
+  <a class="btn alt" href="/jobs.html">Jobs</a>
+  <a class="btn alt" href="/messages.html">Messages</a>
+  <a class="btn alt" href="/reviews.html">Reviews</a>
+  <a class="btn alt" href="/dashboard.html">Dashboard</a>
+  <a class="btn" href="/cart.html">Cart <span id="cartCount">0</span></a>
+</nav></div></header><main class='container'>
+<h1>Products</h1>
+<table class="table"><thead><tr><th>Name</th><th>Price</th><th></th></tr></thead><tbody id="prodRows"></tbody></table>
+<script>window.__PRODUCTS__=[
+{id:'p1',name:'EUR Pallet (lot 30)',price:150},
+{id:'p2',name:'UK→RO Transport (1 pallet)',price:220}
+];</script>
+</main><footer><div class="container small">© <span id="yr"></span> Loadify Market — All rights reserved · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script></footer><script src='/scripts.js'></script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Jobs & Bids</title><link rel='stylesheet' href='/styles.css'></head><body><header><div class="container" style="display:flex;justify-content:space-between;align-items:center">
+<a href="/" style="font-weight:800;color:#fff">Loadify Market</a>
+<nav>
+  <a class="btn alt" href="/products.html">Products</a>
+  <a class="btn alt" href="/jobs.html">Jobs</a>
+  <a class="btn alt" href="/messages.html">Messages</a>
+  <a class="btn alt" href="/reviews.html">Reviews</a>
+  <a class="btn alt" href="/dashboard.html">Dashboard</a>
+  <a class="btn" href="/cart.html">Cart <span id="cartCount">0</span></a>
+</nav></div></header><main class='container'>
+<h1>Courier Jobs</h1>
+<div class="card">
+  <div class="grid cols-2">
+    <div><label>Pickup</label><input id="pickup"></div>
+    <div><label>Dropoff</label><input id="dropoff"></div>
+  </div>
+  <div class="grid cols-2" style="margin-top:10px">
+    <div><label>Price (£)</label><input id="price" type="number" min="0"></div>
+    <div><label>Vehicle</label><select id="vehicle"><option>Small van</option><option>Medium van</option><option>XLWB</option></select></div>
+  </div>
+  <button class="btn" style="margin-top:12px" onclick="postJob()">Post job</button>
+</div>
+<h2 style="margin-top:20px">Open jobs</h2>
+<div id="jobList" class="grid cols-2"></div>
+</main><footer><div class="container small">© <span id="yr"></span> Loadify Market — All rights reserved · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script></footer><script src='/scripts.js'></script></body></html>
